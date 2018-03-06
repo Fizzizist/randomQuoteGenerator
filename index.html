@@ -3,6 +3,16 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
         <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script>
+            $(document).ready(function(){
+                $("#next-quote").on("click", function(){
+                    $.getJSON("https://talaikis.com/api/quotes/random/", function(json){
+                       $("#quote-well").html("<i class='fas fa-quote-left'></i> "+ json.quote + " <i class='fas fa-quote-right'></i><br>- " + json.author); 
+                    });
+                });
+            });
+        </script>
     </head>
     
     <body>
@@ -10,11 +20,11 @@
             #Container
             <div id="main-window" class="container-fluid">
                 #Main Window
-                <h2><i class="fab fa-twitter"></i></h2>
-                <div class="well">
-                    #quote well
+                <h2><a href="#"><i class="fab fa-twitter"></i></a></h2>
+                <div id="quote-well" class="well">
+                    quote well
                 </div>
-                <div class="row"></div>
+                <button id="next-quote" class="btn">Next Quote</button>
             </div>
         </div>
     </body>
