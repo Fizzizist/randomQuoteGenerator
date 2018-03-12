@@ -7,7 +7,7 @@
         <script>
             $(document).ready(function(){
                 $("#next-quote").on("click", function(){
-                    $.getJSON("https://talaikis.com/api/quotes/random/", function(json){
+                    $.getJSON("http://groupstack.net/testing/", function(json){
                        $("#quote-well").html("<i class='fas fa-quote-left'></i> "+ json.quote + " <i class='fas fa-quote-right'></i><br>- " + json.author); 
                     });
                 });
