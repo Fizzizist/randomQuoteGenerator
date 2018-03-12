@@ -6,9 +6,16 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script>
             $(document).ready(function(){
+                $.getJSON("http://groupstack.net/testing/", function(json){
+                    $("#quote").html("<i id='quote' class='fas fa-quote-left'></i> "+ json.quote + " <i class='fas fa-quote-right'></i><br>- " + json.author);
+                });
                 $("#next-quote").on("click", function(){
                     $.getJSON("http://groupstack.net/testing/", function(json){
-                       $("#quote-well").html("<i class='fas fa-quote-left'></i> "+ json.quote + " <i class='fas fa-quote-right'></i><br>- " + json.author); 
+                        $("#quote").fadeOut("slow", function(){
+                            $("#quote").html("<i id='quote' class='fas fa-quote-left'></i> "+ json.quote + " <i class='fas fa-quote-right'></i><br>- " + json.author); 
+                            $("#quote").fadeIn("slow");     
+                        });
+                       
                     });
                 });
             });
@@ -21,8 +28,8 @@
             <div id="main-window" class="container-fluid">
                 #Main Window
                 <h2><a href="#"><i class="fab fa-twitter"></i></a></h2>
-                <div id="quote-well" class="well">
-                    quote well
+                <div id="quote-well" class="container-fluid">
+                    <p id="quote"></p>
                 </div>
                 <button id="next-quote" class="btn">Next Quote</button>
             </div>
