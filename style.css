@@ -1,3 +1,18 @@
 #main-window {
     background-image: url("images/quoteBackground.jpg");
+    padding: 5%;
+}
+
+#next-quote {
+    width: 50%;
+    margin-left: 25%;
+}
+
+#quote {
+    color: white;
+    text-shadow: #000 1px 0 10px;
+}
+
+#quote-well {
+    height: 200px;
 }
