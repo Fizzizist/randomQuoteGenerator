@@ -8,13 +8,13 @@
             $(document).ready(function(){
                 $.getJSON("http://groupstack.net/testing/", function(json){
                     $("#quote").html("<i id='quote' class='fas fa-quote-left'></i> "+ json.quote + " <i class='fas fa-quote-right'></i><br>- " + json.author);
-                    $("#twitter-button").attr("href", "http://twitter.com/home/?status=" + json.quote + " - " + json.author + "%23TechQuotes");
+                    $("#twitter-button").attr("href", "http://twitter.com/home/?status=" + json.quote + " - " + json.author + " %23TechQuotes");
                 });
                 $("#next-quote").on("click", function(){
                     $.getJSON("http://groupstack.net/testing/", function(json){
                         $("#quote").fadeOut("slow", function(){
                             $("#quote").html("<i class='fas fa-quote-left'></i> "+ json.quote + " <i class='fas fa-quote-right'></i><br>- " + json.author);
-                            $("#twitter-button").attr("href", "http://twitter.com/home/?status=" + json.quote + " - " + json.author + "%23TechQuotes");
+                            $("#twitter-button").attr("href", "http://twitter.com/home/?status=" + json.quote + " - " + json.author + " %23TechQuotes");
                             $("#quote").fadeIn("slow");     
                         });
                        
@@ -29,7 +29,7 @@
         <div id="main-window" class="container-fluid">
             <h2><a id="twitter-button" href="http://twitter.com/home/?status=hello world'you derka %2340years"><i class="fab fa-twitter"></i></a></h2>
             <div id="quote-well" class="container-fluid">
-                <h1 id="quote"><i class='fas fa-quote-left'></i>It’s ridiculfsfdadasdasdasdasd da fs f sa f ae f f esf ase fa esf a f aef aef a fae sf af aes faes fa f af ae fa esf ae fae sf a fa f aesf ase fa sef aesf aes fae sef asef as fa esf ase faes f aesf ae fae sf aesf a fa<i class='fas fa-quote-right'></i><br>- Marvin</h1>
+                <h1 id="quote">#quote</h1>
             </div>
             <button id="next-quote" class="btn btn-primary btn-block">Next Quote</button>
         </div>
