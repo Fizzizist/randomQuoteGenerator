@@ -6,12 +6,12 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script>
             $(document).ready(function(){
-                $.getJSON("http://groupstack.net/testing/", function(json){
+                $.getJSON("http://groupstack.net/techQuoteAPI/api/", function(json){
                     $("#quote").html("<i id='quote' class='fas fa-quote-left'></i> "+ json.quote + " <i class='fas fa-quote-right'></i><br>- " + json.author);
                     $("#twitter-button").attr("href", "http://twitter.com/home/?status=" + json.quote + " - " + json.author + " %23TechQuotes");
                 });
                 $("#next-quote").on("click", function(){
-                    $.getJSON("http://groupstack.net/testing/", function(json){
+                    $.getJSON("http://groupstack.net/techQuoteAPI/api/", function(json){
                         $("#quote").fadeOut("slow", function(){
                             $("#quote").html("<i class='fas fa-quote-left'></i> "+ json.quote + " <i class='fas fa-quote-right'></i><br>- " + json.author);
                             $("#twitter-button").attr("href", "http://twitter.com/home/?status=" + json.quote + " - " + json.author + " %23TechQuotes");
